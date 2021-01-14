@@ -9,9 +9,25 @@
     <script type="text/javascript" src="./timer.js"></script>
     <script type="text/javascript" src="./gameengine.js"></script>
     <script type="text/javascript" src="./util.js"></script>
+    <script type="text/javascript" src="./animator.js"></script>
+    <script type="text/javascript" src="./character.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 </head>
 <body>
-    <canvas id="gameWorld" width="1024" height="768" style="background: white; border: 1px solid black"></canvas>
+    <canvas id="gameWorld" width="700" height="400" style="background: black; border: 1px solid black", onclick = "start()"></canvas>
+    <div>
+        click on canvas to start
+    </div>
 </body>
+<script>
+    var audio = new Audio("./audio/Bergentrückung.ogg");
+    audio.volume = 0.5;
+
+    function start() {
+        character.animations[0] = new Animator(character.spritesheet, 175, 0, 170, 127, 1, 17.2, 5, false, false);
+        audio.play();
+        start = function () {};
+    }
+    
+</script>
 </html>
